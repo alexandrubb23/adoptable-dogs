@@ -1,12 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import { dehydrate, useQuery } from 'react-query';
-import { Grid, Text, Button, Timeline, Image, Title } from '@mantine/core';
+import { Grid, Text, Button, Image, Title } from '@mantine/core';
 
 import { queryClient, dogByName } from '../../src/api';
-import { getNullableType } from 'graphql';
 
 export async function getServerSideProps({ params }) {
-  await queryClient.prefetchQuery('dogByName', () =>
+  await queryClient.prefetchQuery('dog', () =>
     dogByName({ name: params.name })
   );
 
