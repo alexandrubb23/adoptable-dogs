@@ -1,0 +1,22 @@
+1. Convert to TypeScript
+$ yarn add --dev typescript @types/react @types/node
+
+2. Add Apollo Micro Service
+$ yarn add graphql apollo-server-micro
+
+3. Add the micro module
+$ yarn add micro
+
+4. Add TypeGraphQL
+@see https://typegraphql.com/docs/installation.html
+$ yarn add reflect-metadata class-validator type-graphql
+
+5. Syncronize the grqphql version in package.jons to v15.x.x
+6. import "reflect-metadata" (api/graphql.ts);
+7. Add to tsconfig
+ {
+  "emitDecoratorMetadata": true,
+  "experimentalDecorators": true,
+  "target": "es2018",
+  "lib": ["esnext.asynciterable"]
+ }
